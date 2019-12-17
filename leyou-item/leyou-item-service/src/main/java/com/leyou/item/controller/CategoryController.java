@@ -29,7 +29,14 @@ public class CategoryController {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(categories);
-
+    }
+    @GetMapping
+    public ResponseEntity<List<String>> queryNameByIds(@RequestParam("ids") List<Long> ids){
+        List<String> names = this.categoryService.queryNamesByIds(ids);
+        if(CollectionUtils.isEmpty(names)){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(names);
     }
 
 }
