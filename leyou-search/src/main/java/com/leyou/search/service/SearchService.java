@@ -1,5 +1,6 @@
 package com.leyou.search.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.leyou.common.pojo.PageResult;
@@ -21,7 +22,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.elasticsearch.core.query.FetchSourceFilter;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.stereotype.Service;
+
 import java.io.IOException;
+import java.security.Key;
 import java.util.*;
 
 @Service
@@ -29,14 +32,19 @@ public class SearchService {
 
     @Autowired
     private CategoryClient categoryClient;
+
     @Autowired
     private BrandClient brandClient;
+
     @Autowired
     private GoodsClient goodsClient;
+
     @Autowired
     private SpecificationClient specificationClient;
+
     @Autowired
     private GoodsRepository goodsRepository;
+
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     public PageResult<Goods> search(SearchRequest request) {
@@ -59,12 +67,6 @@ public class SearchService {
         return new PageResult<>(goodsPage.getTotalElements(), goodsPage.getTotalPages(), goodsPage.getContent());
     }
 
-    /**
-     * 构建商品
-     * @param spu
-     * @return
-     * @throws IOException
-     */
     public Goods buildGoods(Spu spu) throws IOException {
         Goods goods = new Goods();
 
@@ -165,4 +167,6 @@ public class SearchService {
         }
         return result;
     }
+
+
 }

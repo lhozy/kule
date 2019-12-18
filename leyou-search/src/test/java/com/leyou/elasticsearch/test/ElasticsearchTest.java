@@ -10,6 +10,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -19,6 +21,7 @@ import java.util.stream.Collectors;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
+@ComponentScan("com.leyou.search")
 public class ElasticsearchTest {
 
     @Autowired

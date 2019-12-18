@@ -9,8 +9,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-
-@Document(indexName = "goods",type = "docs",shards = 1,replicas = 0)
+@Document(indexName = "goods", type = "docs", shards = 1, replicas = 0)
 public class Goods {
     @Id
     private Long id; // spuId

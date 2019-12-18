@@ -35,7 +35,7 @@ public interface GoodsApi {
      * @return spu详情
      */
     @GetMapping("spu/detail/{spuId}")
-    SpuDetail querySpuDetailBySpuId(@PathVariable Long spuId);
+    SpuDetail querySpuDetailBySpuId(@PathVariable("spuId") Long spuId);
 
     /**
      * 根据spuId查询sku集合

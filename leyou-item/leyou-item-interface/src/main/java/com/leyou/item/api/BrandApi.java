@@ -18,8 +18,8 @@ public interface BrandApi {
      * @param cid
      * @return
      */
-    @GetMapping("cid/{cid}")
-    public List<Brand> queryBrandsByCid(@PathVariable("cid") Long cid);
+//    @GetMapping("cid/{cid}")
+//    public List<Brand> queryBrandsByCid(@PathVariable("cid") Long cid);
     /**
      * 根据主键id查询品牌
      * @param id
@@ -27,4 +27,5 @@ public interface BrandApi {
      */
     @GetMapping("{id}")
     public Brand queryBrandById(@PathVariable("id")Long id);
+
 }

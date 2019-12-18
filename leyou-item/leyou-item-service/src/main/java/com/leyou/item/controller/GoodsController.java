@@ -53,7 +53,7 @@ public class GoodsController {
      * @return
      */
     @GetMapping("spu/detail/{spuId}")
-    public ResponseEntity<SpuDetail> querySpuDetailBySpuId(@PathVariable Long spuId){
+    public ResponseEntity<SpuDetail> querySpuDetailBySpuId(@PathVariable("spuId") Long spuId){
         SpuDetail spuDetail = this.goodsService.querySpuDetailBySpuId(spuId);
         if(null == spuDetail){
             return ResponseEntity.notFound().build();
