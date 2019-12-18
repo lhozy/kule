@@ -19,12 +19,12 @@ public interface BrandApi {
      * @return
      */
     @GetMapping("cid/{cid}")
-    public ResponseEntity<List<Brand>> queryBrandsByCid(@PathVariable("cid") Long cid);
+    public List<Brand> queryBrandsByCid(@PathVariable("cid") Long cid);
     /**
      * 根据主键id查询品牌
      * @param id
      * @return
      */
     @GetMapping("{id}")
-    public ResponseEntity<Brand> queryBrandById(@PathVariable("id")Long id);
+    public Brand queryBrandById(@PathVariable("id")Long id);
 }

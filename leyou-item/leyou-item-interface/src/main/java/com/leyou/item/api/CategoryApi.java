@@ -20,6 +20,6 @@ public interface CategoryApi {
      * @return
      */
     @GetMapping
-    public ResponseEntity<List<String>> queryNameByIds(@RequestParam("ids") List<Long> ids);
+    public List<String> queryNamesByIds(@RequestParam("ids") List<Long> ids);
 
 }

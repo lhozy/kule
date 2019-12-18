@@ -35,7 +35,7 @@ public interface GoodsApi {
      * @return spu详情
      */
     @GetMapping("spu/detail/{spuId}")
-    ResponseEntity<SpuDetail> querySpuDetailBySpuId(@PathVariable Long spuId);
+    SpuDetail querySpuDetailBySpuId(@PathVariable Long spuId);
 
     /**
      * 根据spuId查询sku集合
@@ -43,5 +43,5 @@ public interface GoodsApi {
      * @return sku集合
      */
     @GetMapping("sku/list")
-    ResponseEntity<List<Sku>> querySkusBySpuId(@RequestParam("id") Long spuId);
+    List<Sku> querySkusBySpuId(@RequestParam("id") Long spuId);
 }
